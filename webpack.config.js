@@ -4,11 +4,13 @@ var ROOT_PATH = path.resolve(__dirname);
 var OUTPUT_PATH = path.resolve(ROOT_PATH,"output");
 var JS_PATH = path.resolve(ROOT_PATH,"js");
 var STYLE_PATH = path.resolve(ROOT_PATH,"styles");
+var COMPONENTS_PATH = path.resolve(JS_PATH,"components");;
 
 
 module.exports = {
     entry: {
         simple: path.resolve(JS_PATH, 'simple.js'),
+        antSortTable: path.resolve(COMPONENTS_PATH, 'AntSortTable.js'),
     },
     output: {
         path: OUTPUT_PATH,
