@@ -9,13 +9,14 @@ export const defaultAntSortTableState=
 
 function antSortTableReducer(state=defaultAntSortTableState, action)
 {
-    switch(AntSortTableActionType.type)
+    switch(action.type)
     {
         case AntSortTableActionType.CLEAR_ALL:
             return {filteredInfo: null, sortedInfo: null};
         case AntSortTableActionType.CLEAR_FILTERS:
             return {...state,filteredInfo: null};
         case AntSortTableActionType.SET_AGE_SORT:
+            console.log("in reducer set age sort,action is:"+action);
             return {...state,
                 sortedInfo: {
                 order: 'descend',
@@ -23,6 +24,7 @@ function antSortTableReducer(state=defaultAntSortTableState, action)
                             }
             };
         case AntSortTableActionType.HANDLE_CHANGE:
+            console.log("reducer HANDLE_CHANGE, action is: ",action);
             return {...state,filteredInfo:action.filteredInfo,sortedInfo:action.sortedInfo};
     }
     return state;

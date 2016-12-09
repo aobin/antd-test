@@ -30,7 +30,7 @@ const data = [{
     address: 'London No. 2 Lake Park',
 }];
 
-const AntSortTable = React.createClass(
+/*const AntSortTable = React.createClass(
     {
         getInitialState()
         {
@@ -67,6 +67,8 @@ const AntSortTable = React.createClass(
         setAgeSort(e)
         {
             e.preventDefault();
+
+            console.log(this.props.antSortTableReducer);
             this.setState(
                 {
                     sortedInfo: {
@@ -127,17 +129,17 @@ const AntSortTable = React.createClass(
             );
         },
     }
-);
+);*/
 
-/*export class AntSortTable extends Component
+export class AntSortTable extends Component
 {
     constructor(props)
     {
         super(props);
-        /!*this.setAgeSortParent = this.setAgeSortParent.bind(this);
+        /*this.setAgeSortParent = this.setAgeSortParent.bind(this);
         this.clearFiltersParent = this.clearFiltersParent.bind(this);
         this.clearAllParent = this.clearAllParent.bind(this);
-        this.handleChangeParent = this.handleChangeParent.bind(this);*!/
+        this.handleChangeParent = this.handleChangeParent.bind(this);*/
     }
 
     setAgeSortParent(data,e)
@@ -171,8 +173,8 @@ const AntSortTable = React.createClass(
         let {sortedInfo, filteredInfo} = this.props.antSortTableReducer;
         sortedInfo = sortedInfo || {};
         filteredInfo = filteredInfo || {};
-        console.log("sortedInfo:"+sortedInfo);
-        console.log("filteredInfo:"+filteredInfo);
+        console.log("in render,sortedInfo:",sortedInfo);
+        console.log("in render,filteredInfo:",filteredInfo);
         const columns = [
             {
                 title: 'Name',
@@ -203,8 +205,8 @@ const AntSortTable = React.createClass(
                     {text: 'New York', value: 'New York'},
                 ],
                 filteredValue: filteredInfo.address,
-                onFilter: (value, record) => {record.address.includes(value);console.log("22222222222")},
-                sorter: function(a,b) {a.address.length - b.address.length;console.log("222222")},
+                onFilter: (value, record) => record.address.includes(value),
+                sorter: (a,b) => a.address.length - b.address.length,
                 sortOrder: sortedInfo.columnKey === 'address' && sortedInfo.order,
             }
         ];
@@ -219,7 +221,7 @@ const AntSortTable = React.createClass(
             </div>
         );
     }
-}*/
+}
 
 export default connect
 (

@@ -10,7 +10,9 @@ var COMPONENTS_PATH = path.resolve(JS_PATH,"components");;
 module.exports = {
     entry: {
         simple: path.resolve(JS_PATH, 'simple.js'),
+/*
         antSortTable: path.resolve(COMPONENTS_PATH, 'AntSortTable.js'),
+*/
     },
     output: {
         path: OUTPUT_PATH,
