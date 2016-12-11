@@ -1,4 +1,5 @@
 import {Table} from "antd";
+import AntPagination from "./AntPagination";
 import React,{Component} from "react";
 import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
@@ -218,6 +219,7 @@ export class AntSortTable extends Component
                     <a href="#" onClick={this.clearAllParent.bind(this)}>Clear filters and sorting</a>
                 </div>
                 <Table columns={columns} dataSource={data} onChange={this.handleChangeParent.bind(this)}/>
+                <AntPagination/>
             </div>
         );
     }

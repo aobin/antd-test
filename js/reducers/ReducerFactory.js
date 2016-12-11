@@ -4,11 +4,12 @@ import thunk from 'redux-thunk';
 
 // get all reducers
 import antSortTableReducer from "./AntSortTableReducer";
+import antPaginationReducer from "./AntPaginationReducer";
 
 
 
 const reducers = combineReducers({
-    antSortTableReducer
+    antSortTableReducer, antPaginationReducer
 });
 
 
