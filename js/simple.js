@@ -16,7 +16,8 @@ ReactDom.render(
     <Provider store={store}>
         <LocaleProvider locale={ptBr}>
             <AntSortTable/>
-           {/* <AntPagination/>111*/}
+           {/* <AntPagination/>333*/}
+           {/*test*/}
         </LocaleProvider>
     </Provider>,
     document.getElementById('simple')
