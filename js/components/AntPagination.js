@@ -42,7 +42,7 @@ export class AntPagination extends Component
         return(
             <div>
                 <Items />
-                <Pagination defaultCurrent={currentPage} defaultPageSize={pageSize} total={total} onChange={this.handleChange.bind(this)} />
+                <Pagination showSizeChanger defaultCurrent={currentPage} defaultPageSize={pageSize} total={total} onChange={this.handleChange.bind(this)} />
             </div>
 
         );
