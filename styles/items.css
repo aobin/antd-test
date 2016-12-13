@@ -1,0 +1,29 @@
+.canvaslist li{
+    line-height:20px;
+    margin:5px 4px;
+    border:1px solid silver;
+    text-align:center;
+    display: inline;
+}
+
+h2.rss-title {
+    border: 2px solid #ccc;
+    padding: 10px 20px;
+    background: #eee;
+}
+
+.rss-section.show-inline {
+    display: inline-block;
+}
+
+.rss-section-img{
+    display: inline-block;
+}
+
+.rss-section-content {
+    display: inline-block;
+}
+
+.rss-section-content h3{
+    width: 200px;
+}

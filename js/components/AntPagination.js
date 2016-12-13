@@ -2,8 +2,9 @@ import {Pagination} from "antd";
 import React,{Component} from "react";
 import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
-import {changePage} from "../actions/AntPaginationAction"
-import {setAgeSort} from "../actions/AntSortTableAction"
+import {changePage,loadFeedDocumentFromServer} from "../actions/AntPaginationAction";
+import {setAgeSort} from "../actions/AntSortTableAction";
+import Items from "./Items";
 
 export class AntPagination extends Component
 {
@@ -13,35 +14,35 @@ export class AntPagination extends Component
 
     }
 
+    componentWillMount()
+    {
+        this.props.loadFeedDocumentFromServer(this.props.antPaginationReducer.url,this.props.antPaginationReducer.pageSize,this.props.antPaginationReducer.currentPage);
+    }
+
+    componentDidMount()
+    {
+
+    }
+
+
     handleChange(currentPage)
     {
         console.log("handleChange, currentPage: ",currentPage);
-        this.props.changePage(currentPage);
+        this.props.loadFeedDocumentFromServer(this.props.antPaginationReducer.url,this.props.antPaginationReducer.pageSize,currentPage);
+
         this.props.setAgeSort();
     }
 
 
     render()
     {
-        let currentPage = this.props.antPaginationReducer.currentPage;;
-        this.props.antPaginationReducer.text = currentPage;
-        this.props.antPaginationReducer.pictureUrl = "url:http://www."+currentPage+".com";
-        let second = currentPage+1;
-        let secondURL = "url:http://www."+second+".com";
+        let {currentPage,pageSize,total} = this.props.antPaginationReducer;
+        console.log("antPaginationReducer:",this.props.antPaginationReducer)
 
         return(
             <div>
-                <div>
-                    <h3>{currentPage}</h3>
-                    <span><a href="#">{currentPage}</a> Likes</span>
-                    <span>Picture URL: <a href="#"> {this.props.antPaginationReducer.pictureUrl}</a></span>
-                </div>
-                <div>
-                    <h3>{second}</h3>
-                    <span><a href="#">{second}</a> Likes</span>
-                    <span>Picture URL: <a href="#"> {secondURL}</a></span>
-                </div>
-                <Pagination showSizeChanger defaultCurrent={1} total={50} onChange={this.handleChange.bind(this)} />
+                <Items />
+                <Pagination defaultCurrent={currentPage} defaultPageSize={pageSize} total={total} onChange={this.handleChange.bind(this)} />
             </div>
 
         );
@@ -56,7 +57,7 @@ export default connect
     dispatch => bindActionCreators
     (
         {
-            ...{changePage,setAgeSort},
+            ...{changePage,loadFeedDocumentFromServer,setAgeSort},
         },
         dispatch
     )
