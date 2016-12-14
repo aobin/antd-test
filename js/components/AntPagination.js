@@ -1,10 +1,12 @@
-import {Pagination} from "antd";
+import {Pagination,LocaleProvider} from "antd";
 import React,{Component} from "react";
 import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
 import {changePage,loadFeedDocumentFromServer} from "../actions/AntPaginationAction";
 import {setAgeSort} from "../actions/AntSortTableAction";
 import Items from "./Items";
+import ptBr from "antd/lib/locale-provider/pt_BR";
+import enUS from "antd/lib/locale-provider/en_US";
 
 export class AntPagination extends Component
 {
@@ -42,7 +44,9 @@ export class AntPagination extends Component
         return(
             <div>
                 <Items />
-                <Pagination showSizeChanger defaultCurrent={currentPage} defaultPageSize={pageSize} total={total} onChange={this.handleChange.bind(this)} />
+                <LocaleProvider locale={enUS}>
+                    <Pagination showSizeChanger defaultCurrent={currentPage} defaultPageSize={pageSize} total={total} onChange={this.handleChange.bind(this)} />
+                </LocaleProvider>
             </div>
 
         );

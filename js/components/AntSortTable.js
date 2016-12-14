@@ -215,9 +215,7 @@ export class AntSortTable extends Component {
                 </div>
 
                 <Table columns={columns} dataSource={data} onChange={this.handleChangeParent.bind(this)}/>
-                <LocaleProvider locale={enUS}>
-                    <AntPagination/>
-                </LocaleProvider>
+                {this.props.children}
             </div>
         );
     }
