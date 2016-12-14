@@ -24,7 +24,7 @@ export default class Demo extends Component
                 <h1>Ant Design Demo</h1>
                 <ul role="nav">
                     <li><Link to="/table">Ant Table</Link></li>
-                    <li><Link to="/pagination">Ant Pagination</Link></li>
+                    <li><Link to="/table/pagination">Ant Pagination</Link></li>
                 </ul>
                 {this.props.children}
             </div>

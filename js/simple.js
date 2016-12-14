@@ -15,8 +15,8 @@ ReactDom.render(
     <Provider store={store}>
         <Router history={hashHistory}>
             <Route path="/" component={Demo}>
-                <Route path="/table" component={AntSortTable}>
-                    <Route path="/pagination" components={AntPagination}/>
+                <Route path="table" component={AntSortTable}>
+                    <Route path="pagination" components={AntPagination}/>
                 </Route>
             </Route>
         </Router>

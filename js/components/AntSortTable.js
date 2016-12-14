@@ -213,8 +213,9 @@ export class AntSortTable extends Component {
                     <a href="#" onClick={this.clearFiltersParent.bind(this)}>Clear filters</a>
                     <a href="#" onClick={this.clearAllParent.bind(this)}>Clear filters and sorting</a>
                 </div>
-
+                <LocaleProvider locale={enUS}>
                 <Table columns={columns} dataSource={data} onChange={this.handleChangeParent.bind(this)}/>
+                </LocaleProvider>
                 {this.props.children}
             </div>
         );
