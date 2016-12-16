@@ -162,9 +162,9 @@ export class AntSortTable extends Component {
         this.props.clearFilters();
     }
 
-    handleChangeParent(pagination, filters, sorter) {
+/*    handleChangeParent(pagination, filters, sorter) {
         this.props.handleChange(pagination, filters, sorter);
-    }
+    }*/
 
 
     render() {
@@ -216,7 +216,7 @@ export class AntSortTable extends Component {
                     <a href="#" onClick={this.clearAllParent.bind(this)}>Clear filters and sorting</a>
                 </div>
                 <LocaleProvider locale={enUS}>
-                <Table columns={columns} dataSource={data} onChange={this.handleChangeParent.bind(this)}/>
+                <Table columns={columns} dataSource={data} onChange={this.props.handleChange.bind(this)}/>
                 </LocaleProvider>
                 {this.props.children}
             </div>

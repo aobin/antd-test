@@ -25,7 +25,11 @@ function antSortTableReducer(state=defaultAntSortTableState, action)
             };
         case AntSortTableActionType.HANDLE_CHANGE:
             console.log("reducer HANDLE_CHANGE, action is: ",action);
-            return {...state,filteredInfo:action.filteredInfo,sortedInfo:action.sortedInfo};
+            if (action.sortedInfo.field != null)
+            {
+                console.log("antSortTable reducer,sortedInfo is not null!!");
+                return {...state,filteredInfo:action.filteredInfo,sortedInfo:action.sortedInfo};
+            }
     }
     return state;
 }
