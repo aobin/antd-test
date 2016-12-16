@@ -42,6 +42,11 @@ module.exports = {
                 include: STYLE_PATH
             },
             {
+                test: /\.css$/,
+                loaders: ['style', 'css?sourceMap', 'sass?sourceMap'],
+                include: STYLE_PATH
+            },
+            {
                 test: /\.(png|jpg)$/,
                 loader: 'url?limit=40000'
             },

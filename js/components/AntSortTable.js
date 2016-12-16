@@ -7,6 +7,8 @@ import {clearFilters, clearAll, setAgeSort, handleChange} from "../actions/AntSo
 import ptBr from "antd/lib/locale-provider/pt_BR";
 import enUS from "antd/lib/locale-provider/en_US";
 
+require("../../styles/antTable.css");
+
 /*
  import "babel-polyfill";
  */
