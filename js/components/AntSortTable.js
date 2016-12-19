@@ -226,7 +226,7 @@ export class AntSortTable extends Component {
 
 export default connect
 (
-    state => state,
+    state => {return {antSortTableReducer:state.antSortTableReducer}},
     dispatch => bindActionCreators
     (
         {
