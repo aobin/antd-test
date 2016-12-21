@@ -47,7 +47,7 @@ module.exports = {
                 include: STYLE_PATH
             },
             {
-                test: /\.(png|jpg)$/,
+                test: /\.(png)|(jpg)$/,
                 loader: 'url?limit=40000'
             },
             {

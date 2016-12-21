@@ -27,3 +27,9 @@ h2.rss-title {
 .rss-section-content h3{
     width: 200px;
 }
+
+.rss-picture{
+    height: 103px;
+    width: 143px;
+    background:no-repeat url("../images/img_1.png");
+}
