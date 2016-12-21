@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'BreatheFire';
+  src: url('BreatheFire.eot');
+  src: url('BreatheFire.woff2') format('woff2'),
+       url('BreatheFire.woff') format('woff'),
+       url('BreatheFire.ttf') format('truetype'),
+       url('BreatheFire.svg#BreatheFire') format('svg'),
+       url('BreatheFire.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+

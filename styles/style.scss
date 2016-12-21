@@ -1,0 +1,15 @@
+@import './font.css';
+
+$primaryColor: #ffffff;
+$fontColor: #080000;
+$fontSize: 16px;
+
+body{
+  background: $primaryColor;
+}
+
+.countrySelector{
+  color: $fontColor;
+  font-size: $fontSize;
+  font-family: 'BreatheFire', sans-serif;
+}
