@@ -4,6 +4,8 @@ $primaryColor: #ffffff;
 $fontColor: #080000;
 $fontSize: 16px;
 
+$divBackgroundColor: #ff31ee;
+
 body{
   background: $primaryColor;
 }
@@ -12,4 +14,8 @@ body{
   color: $fontColor;
   font-size: $fontSize;
   font-family: 'BreatheFire', sans-serif;
+}
+
+div h3{
+  background: $divBackgroundColor;
 }
