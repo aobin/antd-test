@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import ReactDOM  from "react-dom";
 import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
+import {Tooltip,Icon} from "antd";
 
 require("../../styles/items.css");
 require("../../styles/style.scss");
@@ -36,6 +37,9 @@ export class Items extends Component
                             <div  className="rss-picture"></div>
                             <span><a href="#">{antPaginationReducer.currentPage}</a> Likes</span>
                             <span><a href="#"> {antPaginationReducer.currentPage}</a> Comment</span>
+                            <Tooltip title="what is your question?">
+                                <Icon type="question" />
+                            </Tooltip>
                         </div>
                     </section>
                 );
