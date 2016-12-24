@@ -3,6 +3,7 @@ var path = require('path');
 var ROOT_PATH = path.resolve(__dirname);
 var OUTPUT_PATH = path.resolve(ROOT_PATH,"output");
 var JS_PATH = path.resolve(ROOT_PATH,"js");
+var TEST_PATH = path.resolve(ROOT_PATH,"test");
 var STYLE_PATH = path.resolve(ROOT_PATH,"styles");
 var COMPONENTS_PATH = path.resolve(JS_PATH,"components");;
 
@@ -26,16 +27,28 @@ module.exports = {
         progress: true,
     },
     module: {
-        preLoaders: [],
+        preLoaders: [{
+            test: /\.js$/,
+            exclude: [/node_modules/,/\.test.js$/],
+            loader: 'isparta-instrumenter'
+        }],
         loaders: [
             {
                 test: /\.jsx?$/,
                 loader: 'babel',
-                include: JS_PATH,
+                include: [JS_PATH,TEST_PATH],
+               /* query: {
+                    presets: ['react', 'es2015', 'stage-0']
+                }*/
+            },
+            /*{
+                test: /\.jsx?$/,
+                loader: 'babel',
+                include: TEST_PATH,
                 query: {
                     presets: ['react', 'es2015', 'stage-0']
                 }
-            },
+            },*/
             {
                 test: /\.(scss|css)$/,
                 loaders: ['style', 'css?sourceMap', 'sass?sourceMap'],
