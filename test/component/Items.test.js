@@ -22,9 +22,9 @@ describe("Items", ()=>
              it("Items TEST", ()=>
              {
                  let doc = TestUtils.renderIntoDocument(<Items {...props} />);
-                 let questionElements = TestUtils.scryRenderedDOMComponentsWithTag(doc, 'section');
+                 let sections = TestUtils.scryRenderedDOMComponentsWithTag(doc, 'section');
 
-                 expect(questionElements.length).to.equal(props.antPaginationReducer.data.length);
+                 expect(sections.length).to.equal(props.antPaginationReducer.data.length);
              });
 
          }
