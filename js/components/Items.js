@@ -57,6 +57,7 @@ export class Items extends Component
     }
 };
 
+/*export { Items };*/
 export default connect
 (
     state => state
