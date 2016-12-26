@@ -36,7 +36,7 @@ export class Items extends Component
                             <h3 className="countrySelector">{item.title}</h3>
                             <div  className="rss-picture"></div>
                             <span><a href="#">{antPaginationReducer.currentPage}</a> Likes</span>
-                            <span><a href="#"> {antPaginationReducer.currentPage}</a> Comment</span>
+                            <span><a href="#"> {antPaginationReducer.currentPage}</a> Comments</span>
                             <Tooltip title="what is your question?">
                                 <Icon type="question" />
                             </Tooltip>

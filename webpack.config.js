@@ -67,6 +67,10 @@ module.exports = {
             {
                 test: /\.less$/,
                 loader: 'style-loader!css-loader!autoprefixer-loader!less-loader'
+            },
+            {
+                test: /\.json$/,
+                loader: 'json'
             }
         ]
     },
