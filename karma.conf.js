@@ -62,7 +62,8 @@ module.exports = function (config) {
                 'karma-webpack',
                 'karma-sourcemap-loader',
                 'karma-coverage',
-                'karma-mocha-reporter'
+                'karma-mocha-reporter'/*,
+                'karma-sinon'*/
             ]
         }
     );

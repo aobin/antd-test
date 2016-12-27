@@ -65,4 +65,4 @@ export default connect
         },
         dispatch
     )
-)(AntPagination)
+)(AntPagination);
