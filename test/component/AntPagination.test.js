@@ -9,17 +9,17 @@ describe("AntPagination Unit Test", ()=>
          {
              it("AntPagination: div created", ()=>
              {
-                 let props;
+                 /*let props;*/
                  let antPaginationReducer;
                  let antPagination;
-
+                 let loadFeedDocumentFromServer=()=>{};
                  antPaginationReducer = {url:"123",currentPage:10,pageSize:1,total:100};
-                 props={
+                /* props={
                      antPaginationReducer:antPaginationReducer,
                      loadFeedDocumentFromServer:()=>{}
-                 };
+                 };*/
 
-                 antPagination = shallow(<AntPagination {...props} />);
+                 antPagination = shallow(<AntPagination antPaginationReducer={antPaginationReducer} loadFeedDocumentFromServer={loadFeedDocumentFromServer} />);
                  /*expect(antPagination.find("div").length).to.equal(1);*/
                  console.log("antPagination",antPagination);
              });
