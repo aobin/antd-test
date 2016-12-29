@@ -3,24 +3,22 @@ var webpackConfig = require('./webpack.config.js');
 module.exports = function (config) {
     config.set(
         {
-            browsers: ['Chrome'],
-            singleRun: true,
-            frameworks: ['mocha','chai'],
+            browsers: ['PhantomJS' /*'Chrome'*/],
+            /*singleRun: true,*/
+            frameworks: ['jasmine'],
             files: [
                 'test/**/*.test.js',
-
+                'node_modules/phantomjs-polyfill-object-assign/object-assign-polyfill.js',
             ],
-            /*plugins: [
-                'karma-browserify',
-                'karma-chrome-launcher',
-                'karma-jasmine',
-                'karma-coverage',
-                'isparta-instrumenter-loader',
-                'babel-loader',
-                'karma-webpack'],*/
             preprocessors: {
                 'test/**/*.test.js': ['webpack','sourcemap'],
                 'js/**/*.js': ['webpack','sourcemap','coverage']
+            },
+
+            babelPreprocessor: {
+                options: {
+                    presets: ['airbnb'],
+                },
             },
 
             coverageReporter: {
@@ -34,21 +32,26 @@ module.exports = function (config) {
 
             },
 
-            reporters: ['mocha','coverage'],
-            client: {
+            reporters: ['spec','coverage'],
+            port: 9876,
+            colors: true,
+            logLevel: config.LOG_INFO,
+            autoWatch: true,
+            singleRun: false,
+            /*client: {
                 mocha: {
                     timeout: '5000'
                 }
-            },
+            },*/
 
-            mochaReporter: {
+            /*mochaReporter: {
                 colors: {
                     success: 'blue',
                     info: 'green',
                     warning: 'cyan',
                     error: 'red'
                 }
-            },
+            },*/
 
             webpack: webpackConfig,
             webpackServer: {
@@ -62,8 +65,11 @@ module.exports = function (config) {
                 'karma-webpack',
                 'karma-sourcemap-loader',
                 'karma-coverage',
-                'karma-mocha-reporter'/*,
+                'karma-mocha-reporter',/*,
                 'karma-sinon'*/
+                'karma-jasmine',
+                'karma-spec-reporter',
+                'karma-phantomjs-launcher'
             ]
         }
     );

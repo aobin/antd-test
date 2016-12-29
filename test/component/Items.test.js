@@ -1,4 +1,4 @@
-import {expect} from "chai";
+/*import {expect} from "chai";*/
 
 import {Items} from "../../js/components/Items";
 import React from 'react';
@@ -26,7 +26,7 @@ describe("Items test with TestUtils", ()=>
                  let sections = TestUtils.scryRenderedDOMComponentsWithTag(doc, 'section');
                  console.log(sections);
                  console.log("id",sections[0].id,"class",sections[0].className);
-                 expect(sections.length).to.equal(props.antPaginationReducer.data.length);
+                 expect(sections.length).toEqual(props.antPaginationReducer.data.length);
              });
 
          }
@@ -56,13 +56,13 @@ describe("Items test with Enzyme", ()=>
 
              it("Items TEST", ()=>
              {
-                 expect(items.find("section").length).to.equal(props.antPaginationReducer.data.length);
+                 expect(items.find("section").length).toEqual(props.antPaginationReducer.data.length);
              });
 
              it("Items test Text", ()=>
              {
-                 expect(items.find("span").at(0).text()).to.equal(" Likes");
-                 expect(items.find("span").at(1).text()).to.equal("  Comments");
+                 expect(items.find("span").at(0).text()).toEqual(" Likes");
+                 expect(items.find("span").at(1).text()).toEqual("  Comments");
              });
 
          }

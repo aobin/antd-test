@@ -1,4 +1,4 @@
-import {expect} from "chai";
+/*import {expect} from "chai";*/
 import {AntPagination} from "../../js/components/AntPagination";
 import React from 'react';
 import {shallow,mount} from "enzyme";
@@ -19,8 +19,9 @@ describe("AntPagination Unit Test", ()=>
                      loadFeedDocumentFromServer:()=>{}
                  };*/
 
-                 antPagination = shallow(<AntPagination antPaginationReducer={antPaginationReducer} loadFeedDocumentFromServer={loadFeedDocumentFromServer} />);
-                 /*expect(antPagination.find("div").length).to.equal(1);*/
+                 antPagination = shallow(<AntPagination antPaginationReducer={antPaginationReducer}  loadFeedDocumentFromServer={loadFeedDocumentFromServer}/>);
+                 expect(antPagination.find("div").length).toEqual(1);
+                 console.log("antPagination.length:",antPagination.length);
                  console.log("antPagination",antPagination);
              });
 
