@@ -18,7 +18,7 @@ export function loadData(returnedData)
     return {type:AntPaginationActionType.LOAD_DATA, returnedData:returnedData};
 }
 
-export function loadFeedDocumentFromServer(url,pageSize,currentPage)
+/*export function loadFeedDocumentFromServer(url,pageSize,currentPage)
 {
     console.log("loadFeedDocumentFromServer, url:"+url+"    limit: "+pageSize+"   offset: "+currentPage);
 
@@ -48,5 +48,34 @@ export function loadFeedDocumentFromServer(url,pageSize,currentPage)
                 }
             }
         );
+    }
+}*/
+
+export function loadFeedDocumentFromServer(url,pageSize,currentPage)
+{
+    console.log("loadFeedDocumentFromServer, url:"+url+"    limit: "+pageSize+"   offset: "+currentPage);
+
+    return (dispatch)=>
+    {
+        return $.ajax
+        (
+            {
+                url: url,
+                jsonp:'callback',
+                async:false,
+                data: {limit:pageSize, offset:currentPage},
+                dataType:'jsonp',
+                type: 'GET'
+            }
+        ).done(function(data) {
+            console.log("loadFeedDocumentFromServer success data: ",data);
+            let responseData = {data: data.feedDocument.feedItems, total: data.meta.totalCount};
+            dispatch(loadData(responseData));
+            dispatch(changePage(currentPage));
+        }).fail(function(err) {
+           err.toString();
+        }).always(function() {
+            console.log("ajax alwayssssssssssssss");
+        });
     }
 }
