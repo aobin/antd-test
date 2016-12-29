@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "webpack-dev-server --devtool eval-source-map --progress --colors --hot --inline --port 8081",
-    "test": "mocha --compilers js:babel-core/register --recursive"
+    "test": "mocha --compilers js:babel-core/register --recursive",
+    "test": "karma start --single-run"
   },
   "dependencies": {
     "express": "~4.14.0"
