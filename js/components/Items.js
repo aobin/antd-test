@@ -57,7 +57,10 @@ export class Items extends Component
     }
 };
 
-/*export { Items };*/
+Items.propTypes = {
+    antPaginationReducer:React.PropTypes.object.isRequired,
+};
+
 export default connect
 (
     state => state

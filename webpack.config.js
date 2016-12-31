@@ -7,6 +7,7 @@ var TEST_PATH = path.resolve(ROOT_PATH,"test");
 var STYLE_PATH = path.resolve(ROOT_PATH,"styles");
 var COMPONENTS_PATH = path.resolve(JS_PATH,"components");;
 
+var webpack = require('webpack');
 
 module.exports = {
     entry: {
@@ -86,5 +87,9 @@ module.exports = {
         'react/lib/ExecutionEnvironment': true,
         'react/lib/ReactContext': true
     },
-    plugins: []
+    plugins: [
+        /*new webpack.DefinePlugin({
+        'process.env.NODE_ENV': "development",
+        })*/
+    ]
 };

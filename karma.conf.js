@@ -60,13 +60,13 @@ module.exports = function (config) {
 
             plugins: [
                 'karma-chrome-launcher',
-                'karma-chai',
-                'karma-mocha',
+                /*'karma-chai',
+                'karma-mocha',*/
                 'karma-webpack',
                 'karma-sourcemap-loader',
                 'karma-coverage',
-                'karma-mocha-reporter',/*,
-                'karma-sinon'*/
+                /*'karma-mocha-reporter',
+                'karma-sinon',*/
                 'karma-jasmine',
                 'karma-spec-reporter',
                 'karma-phantomjs-launcher'
