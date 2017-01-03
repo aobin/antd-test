@@ -1,5 +1,6 @@
-/output/
+/app/
 /.idea/
 /node_modules/
 npm-debug.log
 /coverage/
+!/app/

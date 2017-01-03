@@ -1,7 +1,7 @@
 var path = require('path');
 
 var ROOT_PATH = path.resolve(__dirname);
-var OUTPUT_PATH = path.resolve(ROOT_PATH,"output");
+var OUTPUT_PATH = path.resolve(ROOT_PATH,"app/output");
 var JS_PATH = path.resolve(ROOT_PATH,"js");
 var TEST_PATH = path.resolve(ROOT_PATH,"test");
 var STYLE_PATH = path.resolve(ROOT_PATH,"styles");
@@ -18,7 +18,8 @@ module.exports = {
     },
     output: {
         path: OUTPUT_PATH,
-        filename: '[name].js'
+        filename: '[name].js',
+        publicPath: '/output/'
     },
 
     devServer: {
@@ -26,6 +27,7 @@ module.exports = {
         hot: true,
         inline: true,
         progress: true,
+        contentBase: "./app",
     },
     module: {
         preLoaders: [{
